@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- Website server here -->
+<html lang="en">														<!-- Add this in: xmlns="http://###" xml:lang="en" -->
+	<head>
+		<meta charset="ISO-8859-1"/>									<!-- Program Language -->
+		<meta http-equiv="refresh" content="60"/>						<!-- Refresh page -->
+		<meta name="description" content="Enter Description Here"/>
+		<script src="refreshbutton.js"></script>								<!-- Javascript -->
+		<base href=""/>													<!-- Referencing the base URL -->
+		<link rel="stylesheet" href=""/>								<!-- Stylesheet -->
+		<link rel="icon" href=""/>										<!-- Icon, change to .ico -->
+		<title>WFS - KPIT :: Ramp Flight Tracker</title>
+	</head>
+	
+	<body>
+		<form name="login">
+            Username<input type="text" name="userid"/><br/>
+            Password<input type="password" name="pswrd"/>
+            <input type="button" onclick="check(this.form)" value="Login"/>
+            <input type="reset" value="Cancel"/>
+        </form>
+        <script lang="javascript">
+            function check(form) { /*function to check userid & password*/
+                /*the following code checkes whether the entered userid and password are matching*/
+                if(form.userid.value == "wfspit" && form.pswrd.value == "mywfs") {
+                    alert("Good Job!")<!-- window.open('target.html')/*opens the target page while Id & password matches*/ -->
+                }
+                else {
+                    alert("Username OR Password is incorrect")/*displays error message*/
+                }
+            }
+        </script>
+        	<br/>
+        <p>Username is wfspit and password is mywfs</p>
+	</body>
+</html>
