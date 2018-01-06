@@ -57,49 +57,17 @@
 				<p id="time"></p>
 				<script>
 					function updateClock() {
-						z = new Date();
-						h = z.getHours() < 10
-                        			? "0" + z.getHours()
-                        			: z.getHours();
-						i = z.getMinutes() < 10
-                        			? "0" + z.getMinutes()
-                        			: z.getMinutes();
-						s = z.getSeconds() < 10
-                        			? "0" + z.getSeconds()
-                        			: z.getSeconds();
-    						var now = new Date(),
-        					months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; 
-        					time = h + ':' + i + ':' + s, 
-        					date = [now.getDate(), 
-                				months[now.getMonth()],
-                				now.getFullYear()].join(' ');
-    						document.getElementById('time').innerHTML = [date, time].join(' / ');
-    						setTimeout(updateClock, 1000);
-					}
-					updateClock();
-				<!-- <script>
-					z = new Date();
-					h = z.getHours() < 10
-                        		? "0" + z.getHours()
-                        		: z.getHours();
-					i = z.getMinutes() < 10
-                        		? "0" + z.getMinutes()
-                        		: z.getMinutes();
-					s = z.getSeconds() < 10
-                        		? "0" + z.getSeconds()
-                        		: z.getSeconds();
-					document.getElementById("time").innerHTML = h + ":" + i + ":" + s;
-					setInterval(z,1000);
-				</script> -->
-				<br/>
-				<script>
-					n = new Date();
-					y = n.getFullYear();
-					m = n.getMonth() + 1;
-					d = n.getDate();
-					document.getElementById("date").innerHTML = m + "-" + d + "-" + y;
-				</script>
-				<p id="date"></p>
+                       var now = new Date(), 
+                       months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; 
+                       time = now.getHours() + ':' + now.getMinutes() + ":" + now.getSeconds(), 
+                       date = [now.getDate(), 
+                       months[now.getMonth()],
+                       now.getFullYear()].join(' ');
+                       document.getElementById('time').innerHTML = time;
+                       setTimeout(updateClock, 1000);
+                       }
+                       updateClock(); 
+                </script>
 			</div>
 		</div>
 		<div class="footer">
