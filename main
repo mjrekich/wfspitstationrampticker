@@ -2,10 +2,26 @@
 <!-- Website server here -->
 <html lang="en">									<!-- Add this in: xmlns="http://###" xml:lang="en" -->
 	<head>
-		<meta charset="windows-1252"/>						
+		<meta charset="utf-8"/>						
 		<meta http-equiv="refresh" content="60"/>				<!-- Refresh page -->
 		<meta name="description" content="Enter Description Here"/>
-		<script src="refreshbutton.js"></script>				<!-- Javascript -->
+		<script>
+			function refreshAt(hours, minutes, seconds) {
+    				var now = new Date();
+    				var then = new Date();
+			if(now.getHours() > hours ||
+      				(now.getHours() == hours && now.getMinutes() > minutes) ||
+        			now.getHours() == hours && now.getMinutes() == minutes && now.getSeconds() >= seconds) {
+        			then.setDate(now.getDate() + 1);
+    			}
+    			then.setHours(hours);
+    			then.setMinutes(minutes);
+    			then.setSeconds(seconds);
+    			var timeout = (then.getTime() - now.getTime());
+    			setTimeout(function() { window.location.reload(true); }, timeout);
+			}
+			refreshAt(03,30,0);
+		</script>				
 		<base href=""/>								<!-- Referencing the base URL -->
 		<link rel="stylesheet" href=""/>					<!-- Stylesheet -->
 		<link rel="icon" href=""/>						<!-- Icon, change to .ico -->
@@ -25,18 +41,37 @@
 					<input type="reset" value="Cancel"/>
 	       			</form>
 	        		<script>
-	            			function check(form) { /*function to check userid & password*/
+	            			function check(form) {
        	         				if(form.userid.value == "wfspit" && form.pswrd.value == "mywfs") {
        	             					alert("Good Job!")
                 				}
                 				else {
-                    					alert("Username OR Password is incorrect")/*displays error message*/
+                    					alert("Username OR Password is incorrect")
              					}
           				}
         			</script>
         			<br/>
         			<p>Username is wfspit and password is mywfs</p>
-			</div>	
+			</div>
+			<div class="time">
+				<h1 id="time"></h1>
+				<script>
+					z = new Date();
+					h = z.getHours();
+					i = z.getMinutes;
+					s = z.getSeconds();
+					document.getElementById("time").innerHTML = h + ":" + i + ":" + s;
+				</script>
+				<br/>
+				<script>
+					n =  new Date();
+					y = n.getFullYear();
+					m = n.getMonth() + 1;
+					d = n.getDate();
+					document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+				</script>
+				<h2 id="date"></h2>
+			</div>
 		</div>
 		<div class="footer">
 			<p>Copyright Matthew Rekich 2018</p>
