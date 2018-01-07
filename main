@@ -2,25 +2,28 @@
 <!-- Website server here -->
 <html lang="en">									<!-- Add this in: xmlns="http://###" xml:lang="en" -->
 	<head>
+	
 		<meta charset="utf-8"/>						
 		<meta name="description" content="Enter Description Here"/>
-		<script>
-			function refreshAt(hours, minutes, seconds) {
-    				var now = new Date();
-    				var then = new Date();
-			if(now.getHours() > hours ||
-      				(now.getHours() == hours && now.getMinutes() > minutes) ||
-        			now.getHours() == hours && now.getMinutes() == minutes && now.getSeconds() >= seconds) {
-        			then.setDate(now.getDate() + 1);
-    			}
-    			then.setHours(hours);
-    			then.setMinutes(minutes);
-    			then.setSeconds(seconds);
-    			var timeout = (then.getTime() - now.getTime());
-    			setTimeout(function() { window.location.reload(true); }, timeout);
-			}
-			refreshAt(03,30,0);
-		</script>				
+		
+			<script>
+				function refreshAt(hours, minutes, seconds) {
+	    				var now = new Date();
+	    				var then = new Date();
+				if(now.getHours() > hours ||
+	      				(now.getHours() == hours && now.getMinutes() > minutes) ||
+	        			now.getHours() == hours && now.getMinutes() == minutes && now.getSeconds() >= seconds) {
+	        			then.setDate(now.getDate() + 1);
+	    			}
+	    			then.setHours(hours);
+	    			then.setMinutes(minutes);
+	    			then.setSeconds(seconds);
+	    			var timeout = (then.getTime() - now.getTime());
+	    			setTimeout(function() { window.location.reload(true); }, timeout);
+				}
+				refreshAt(03,30,0);
+			</script>			
+				
 		<base href=""/>								<!-- Referencing the base URL -->
 		<link rel="stylesheet" href=""/>					<!-- Stylesheet -->
 		<link rel="icon" href=""/>						<!-- Icon, change to .ico -->
@@ -28,25 +31,34 @@
 	</head>
 	
 	<body class="home">
-		<div class="header" id="header">
-			<div class="logo">
+		
+		<div id="header">
+		
+			<div id="headerlogo">
+				
 				<img src=""/>
-			</div>
-			<div class="admin">
-              <div>
-                <button onclick="document.getElementById('adminform').style.display='block'">Admin<br/>Login</button>
-                <div id="adminform">
-                  <div id="adminform" class="adminform">
-                  <span onclick="document.getElementById('adminform').style.display='none'" 
-                  class="close" title="Close Modal">&times;</span>
-				    <form name="login">
-                      <label>Username</label>
-                      <input type="text" name="userid" size="10"><br/>
-                      <label>Password</label>
-                      <input type="password" name="pswrd" size="10"><br/>
-	        	      <input type="button" onclick="check(this.form)" value="Login"/>
-	       			</form>
-	        		<script>
+			
+			</div>	
+					
+			<div id="admin">
+				
+				<div>
+
+					<button onclick="document.getElementById('adminform').style.display='block'">Admin<br/>Login</button>
+
+					<div id="adminform">
+
+						<span onclick="document.getElementById('adminform').style.display='none'" class="close" title="Close Modal">&times;</span>
+						
+						<form name="login">
+							<label>Username</label>
+							<input type="text" name="userid" size="10"><br/>
+							<label>Password</label>
+							<input type="password" name="pswrd" size="10"><br/>
+							<input type="button" onclick="check(this.form)" value="Login"/>
+						</form>
+						
+						<script>
 	            			function check(form) {
        	         				if(form.userid.value == "wfs" && form.pswrd.value == "wfs") {
        	             					document.getElementById('header').style.backgroundColor = 'yellow'
@@ -55,102 +67,154 @@
                     					document.getElementById('inc').innerHTML = "Incorrect";
              					}
                               
-          				}
-        			</script>
-                </div>
-                <div id="inc" style="color:red">
-                  <p></p>
-                </div>
+          					}
+						</script>
+						
+					</div>
+					
+					<div id="inc" style="color:red">
+					
+						<p></p>
+						
+					</div>
+					
+				</div>
+				
+				<div class="timeanddate">
+				
+					<div class="time">
+					
+						<p id="time" class="time"></p>
+						
+						<br/>
+                  
+						<script>
+							function updateTime() {
+								var now = new Date(); 
+								h = now.getHours() < 10 		//hours
+								? '0' + now.getHours() 
+								: now.getHours();
+								m = now.getMinutes() < 10 		//minutes
+								? '0' + now.getMinutes() 
+								: now.getMinutes();
+								s = now.getSeconds() < 10 		//seconds
+								? '0' + now.getSeconds() 
+								: now.getSeconds();
+								time = h + ':' + m + ":" + s; 
+								document.getElementById('time').innerHTML = time;
+								setTimeout(updateTime, 1000);
+							}
+							updateTime();
+						</script>
+						
+					</div>
+					
+					<div class="date">
+					
+						<p id="date" class="date"></p>
+						
+						<script>
+							function updateDate() {
+								var yay = new Date();
+								month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+								d = yay.getDate(); //date
+								m = month[yay.getMonth()]; //month
+								y = yay.getFullYear(); //year
+								date = m + " " + d + ", " + y;
+								document.getElementById('date').innerHTML = date;
+								setTimeout(updateDate, 1000);
+								}
+								updateDate();
+						</script>
+						
+					</div>
+					
+				</div>
+				
+				<div class="addflight">
+				
+					<button onclick="document.getElementById('addflight').style.display='block'">Add<br/>Flight</button>
+					
+					<div id="addflight" class="addflight">
+					
+						<span onclick="document.getElementById('addflight').style.display='none'" class="close" title="Close Add Flight">&times;</span>
+						
+						<form name="addflight">
+							<label>Airline Code</label>
+							<input type="text" name="airline" maxlength="3" size="1"><br/>
+							<label>Flight #</label>
+							<input type="text" name="flightnumber" maxlength="4" size="3"><br/>
+							<label>Route</label>
+							<input type="text" name="origin" maxlength="4" size="1">
+							<input type="text" name="destination" maxlength="4" size="1"><br/>
+							<label>Reoccurring?</label>
+							<input type="radio" name="reoccurring">
+						</form>
+						
+					</div>
+					
+				</div>
+				
 			</div>
-			<div class="timeanddate">
-                <div class="time">
-				  <p id="time" class="time"></p>
-                  <br/>
-				  <script>
-                      function updateTime() {
-                         var now = new Date(); 
-                         h = now.getHours() < 10 //hours
-                         ? '0' + now.getHours() 
-                         : now.getHours();
-                         m = now.getMinutes() < 10 //minutes
-                         ? '0' + now.getMinutes() 
-                         : now.getMinutes();
-                         s = now.getSeconds() < 10 //seconds
-                         ? '0' + now.getSeconds() 
-                         : now.getSeconds();
-                         time = h + ':' + m + ":" + s; 
-                         document.getElementById('time').innerHTML = time;
-                         setTimeout(updateTime, 1000);
-                         }
-                         updateTime(); 
-                    
-                </script>
-              </div>
-              <div class="date">
-                 <p id="date" class="date"></p>
-                 <script>
-                   function updateDate() {
-                       var yay = new Date();
-                       month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-                       d = yay.getDate(); //date
-                       m = month[yay.getMonth()]; //month
-                       y = yay.getFullYear(); //year
-                       date = m + " " + d + ", " + y;
-                       document.getElementById('date').innerHTML = date;
-                       setTimeout(updateDate, 1000);
-                       }
-                       updateDate();
-                </script>
-              </div>
+			
+			<div class="tickerheader">
+			
+				<h1>Departures</h1>
+				<h1>Arrivals</h1>
+				
 			</div>
-          <div class="addflight">
-            <button onclick="document.getElementById('addflight').style.display='block'">Add<br/>Flight</button>
-            <div id="addflight" class="addflight">
-              <span onclick="document.getElementById('addflight').style.display='none'" 
-              class="close" title="Close Add Flight">&times;</span>
-              <form name="addflight">
-                <label>Airline Code</label>
-                <input type="text" name="airline" maxlength="3" size="1"><br/>
-                <label>Flight #</label>
-                <input type="text" name="flightnumber" maxlength="4" size="3"><br/>
-                <label>Route</label>
-                <input type="text" name="origin" maxlength="4" size="1">
-                <input type="text" name="destination" maxlength="4" size="1"><br/>
-                <label>Reoccurring?
-                <input type="radio" name="reoccurring">
-              </form>
-            </div>
-          </div>
+			
+			<div class="departures">
+			
+				<div id="d1">
+				
+					<div id="d1allogo">
+					
+						<a href=""> <!-- Airline Logos -->
+						
+					</div>
+					
+					<div id="d1alname">
+					
+						<p></p>
+						
+					</div>
+					
+					<div id="d1fltnum">
+					
+						<p></p>
+						
+					</div>
+					
+					<div id="d1route">
+					
+						<p></p>
+						<a href=""> <!-- Arrow Picture for Route -->
+						<p></p>
+						
+					</div>
+					
+					<div id="d1status">
+					
+						<p></p>
+						
+					</div>
+					
+				</div>
+				
+				<div class="arrivals">
+				
+				</div>
+				
+			</div>
+			
 		</div>
-        <div class="tickerheader">
-          <h1>Departures</h1>
-          <h1>Arrivals</h1>
-        </div>
-        <div class="departures">
-          <div id="d1">
-            <div id="d1allogo">
-              <a href=""> <!-- Airline Logos -->
-            </div>
-            <div id="d1alname">
-              <p></p>
-            </div>
-            <div id="d1fltnum">
-              <p></p>
-            </div>
-            <div id="d1route">
-              <p></p>
-              <a href=""> <!-- Arrow Picture for Route -->
-              <p></p>
-            </div>
-            <div id="d1status">
-              <p></p>
-            </div>
-          </div>
-        <div class="arrivals">
-        </div>
-      </div>
+		
 		<div class="footer">
+		
 			<p>Copyright Matthew Rekich 2018</p>
+			
 		</div>
+		
 	</body>
 </html>
