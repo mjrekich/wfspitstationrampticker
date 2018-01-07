@@ -53,21 +53,46 @@
         			<br/>
         			<p>Username is wfspit and password is mywfs</p>
 			</div>
-			<div class="time">
-				<p id="time"></p>
-				<script>
-					function updateClock() {
-                       var now = new Date(), 
-                       months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; 
-                       time = now.getHours() + ':' + now.getMinutes() + ":" + now.getSeconds(), 
-                       date = [now.getDate(), 
-                       months[now.getMonth()],
-                       now.getFullYear()].join(' ');
-                       document.getElementById('time').innerHTML = time;
-                       setTimeout(updateClock, 1000);
-                       }
-                       updateClock(); 
+			<div class="timeanddate">
+                <div class="time">
+				  <p id="time" class="time"></p>
+                  <br/>
+				  <script>
+                      function updateTime() {
+                         var now = new Date(); 
+                         h = now.getHours() < 10 //hours
+                         ? '0' + now.getHours() 
+                         : now.getHours();
+                         m = now.getMinutes() < 10 //minutes
+                         ? '0' + now.getMinutes() 
+                         : now.getMinutes();
+                         s = now.getSeconds() < 10 //seconds
+                         ? '0' + now.getSeconds() 
+                         : now.getSeconds();
+                         time = h + ':' + m + ":" + s; 
+                         document.getElementById('time').innerHTML = time;
+                         setTimeout(updateTime, 1000);
+                         }
+                         updateTime(); 
+                    
                 </script>
+              </div>
+              <div class="date">
+                 <p id="date" class="date"></p>
+                 <script>
+                   function updateDate() {
+                       var yay = new Date();
+                       month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+                       d = yay.getDate(); //date
+                       m = month[yay.getMonth()]; //month
+                       y = yay.getFullYear(); //year
+                       date = m + " " + d + ", " + y;
+                       document.getElementById('date').innerHTML = date;
+                       setTimeout(updateDate, 1000);
+                       }
+                       updateDate();
+                </script>
+              </div>
 			</div>
 		</div>
 		<div class="footer">
