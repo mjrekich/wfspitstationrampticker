@@ -1,0 +1,35 @@
+body {
+  background-color: black;
+  color: white;
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  border: 1px solid black;
+}
+
+div.header {
+  background-color:#000080;
+  height: 110px;
+  border: 2px solid black;
+}
+
+div.headerlogo {
+  display: inline-block;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width; 100px;
+}
+
+div.admin {
+  display: inline-block;
+}
+
+#adminbutton {
+  height: 110px;
+  width: 200px;
+}
+
+div.adminform {
+  display: hidden;
+}
