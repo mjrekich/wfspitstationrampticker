@@ -33,17 +33,25 @@
 				<img src=""/>
 			</div>
 			<div class="admin">
-              <button type="button" onclick=
-				<form name="login">
-	           			Username<input type="text" name="userid"/><br/>
-	         			Password<input type="password" name="pswrd"/>
-	        			<input type="button" onclick="check(this.form)" value="Login"/>
-					<input type="reset" value="Cancel"/>
+              <div>
+                <button onclick="document.getElementById('adminform').style.display='block'">Admin<br/>Login</button>
+                <div id="adminform">
+                  <div id="adminform" class="adminform">
+                  <span onclick="document.getElementById('adminform').style.display='none'" 
+                  class="close" title="Close Modal">&times;</span>
+                </div>
+                <div class="content">
+				    <form name="login">
+                      <label>Username</label>
+                      <input type="text" name="userid"/><br/>
+                      <label>Password</label>
+                      <input type="password" name="pswrd"/>
+	        	      <input type="button" onclick="check(this.form)" value="Login"/>
 	       			</form>
 	        		<script>
 	            			function check(form) {
        	         				if(form.userid.value == "wfspit" && form.pswrd.value == "mywfs") {
-       	             					alert("Good Job!")
+       	             					document.body.style.backgroundColor = 'green'
                 				}
                 				else {
                     					alert("Username OR Password is incorrect")
@@ -52,6 +60,7 @@
         			</script>
         			<br/>
         			<p>Username is wfspit and password is mywfs</p>
+                </div>
 			</div>
 			<div class="timeanddate">
                 <div class="time">
