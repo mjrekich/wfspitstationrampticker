@@ -3,7 +3,6 @@
 <html lang="en">									<!-- Add this in: xmlns="http://###" xml:lang="en" -->
 	<head>
 		<meta charset="utf-8"/>						
-		<meta http-equiv="refresh" content="60"/>				<!-- Refresh page -->
 		<meta name="description" content="Enter Description Here"/>
 		<script>
 			function refreshAt(hours, minutes, seconds) {
@@ -34,6 +33,7 @@
 				<img src=""/>
 			</div>
 			<div class="admin">
+              <button type="button" onclick=
 				<form name="login">
 	           			Username<input type="text" name="userid"/><br/>
 	         			Password<input type="password" name="pswrd"/>
@@ -94,6 +94,9 @@
                 </script>
               </div>
 			</div>
+          <div class="addflight">
+            
+          </div>
 		</div>
 		<div class="footer">
 			<p>Copyright Matthew Rekich 2018</p>
