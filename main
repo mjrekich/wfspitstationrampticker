@@ -41,14 +41,14 @@
                   class="close" title="Close Modal">&times;</span>
 				    <form name="login">
                       <label>Username</label>
-                      <input type="text" name="userid"/><br/>
+                      <input type="text" name="userid" size="10"><br/>
                       <label>Password</label>
-                      <input type="password" name="pswrd"/>
+                      <input type="password" name="pswrd" size="10"><br/>
 	        	      <input type="button" onclick="check(this.form)" value="Login"/>
 	       			</form>
 	        		<script>
 	            			function check(form) {
-       	         				if(form.userid.value == "wfspit" && form.pswrd.value == "mywfs") {
+       	         				if(form.userid.value == "wfs" && form.pswrd.value == "wfs") {
        	             					document.getElementById('header').style.backgroundColor = 'yellow'
                 				}
                 				else {
@@ -57,8 +57,6 @@
                               
           				}
         			</script>
-        			<br/>
-        			<p>Username is wfspit and password is mywfs</p>
                 </div>
                 <div id="inc" style="color:red">
                   <p></p>
@@ -111,19 +109,46 @@
               <span onclick="document.getElementById('addflight').style.display='none'" 
               class="close" title="Close Add Flight">&times;</span>
               <form name="addflight">
-                <label>Airline</label>
-                <input type="text" name="airline"><br/>
+                <label>Airline Code</label>
+                <input type="text" name="airline" maxlength="3" size="1"><br/>
                 <label>Flight #</label>
-                <input type="text" name="flightnumber"><br/>
+                <input type="text" name="flightnumber" maxlength="4" size="3"><br/>
                 <label>Route</label>
-                <input type="text" name="origin">
-                <input type="text" name="destination"><br/>
+                <input type="text" name="origin" maxlength="4" size="1">
+                <input type="text" name="destination" maxlength="4" size="1"><br/>
                 <label>Reoccurring?
                 <input type="radio" name="reoccurring">
               </form>
             </div>
           </div>
 		</div>
+        <div class="tickerheader">
+          <h1>Departures</h1>
+          <h1>Arrivals</h1>
+        </div>
+        <div class="departures">
+          <div id="d1">
+            <div id="d1allogo">
+              <a href=""> <!-- Airline Logos -->
+            </div>
+            <div id="d1alname">
+              <p></p>
+            </div>
+            <div id="d1fltnum">
+              <p></p>
+            </div>
+            <div id="d1route">
+              <p></p>
+              <a href=""> <!-- Arrow Picture for Route -->
+              <p></p>
+            </div>
+            <div id="d1status">
+              <p></p>
+            </div>
+          </div>
+        <div class="arrivals">
+        </div>
+      </div>
 		<div class="footer">
 			<p>Copyright Matthew Rekich 2018</p>
 		</div>
