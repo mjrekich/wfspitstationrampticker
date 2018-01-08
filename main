@@ -34,28 +34,28 @@
 		
 		<div class="header" id="header">
 		
-			<div class="headerlogo" id="headerlogo">
+			<div class="headerlogo">
 				
-				<img src="http://r1.aviationpros.com/files/base/CAVC/image/2017/05/16x9/1280x720/wfs_logo.592d810085d07.jpg" style="width:200px;height:110px;"/>
+				<img  id="headerlogo" src="http://r1.aviationpros.com/files/base/CAVC/image/2017/05/16x9/1280x720/wfs_logo.592d810085d07.jpg"/>
 			
 			</div>	
 					
 			<div class="admin" id="admin">
 				
-				<div class="adminbutton">
+				<div class="adminbtn" id="adminbtn">
 
-					<button  id="adminbutton" onclick="document.getElementById('adminform').style.display='block'">Admin<br/>Login</button>
+					<button id="adminbutton" onclick="document.getElementById('adminform').style.display='block'">Admin<br/>Login</button>
 
 				</div>
 				
 				<div class="adminform" id="adminform">
       
-                    			<div class="close" style="height:14px;width:14px;">
+                    <div class="close" style="height:14px;width:14px;">
                       
 					    <span onclick="document.getElementById('adminform').style.display='none'" class="close" title="Close Modal" style="position:relative;left:2px;bottom:2px;">&times;</span>
 					
-                    			</div>  
-                      	
+                    </div>  
+                      
 					<form name="login">
 						<label>Username</label>
 						<input id="userid" type="text" name="userid" size="10"><br/>
@@ -68,6 +68,7 @@
 	            				function check(form) {
        	         					if(form.userid.value == "wfs" && form.pswrd.value == "wfs") {
        	             						document.getElementById('header').style.backgroundColor = 'yellow'
+                                            document.getElementById('adminform').style.display = 'none'
                 					}
                 					else {
                     						document.getElementById('inc').innerHTML = "Incorrect";
@@ -117,7 +118,7 @@
 					
 				<div class="date">
 					
-					<p id="date" class="date"></p>
+					<p id="date"></p>
 						
 					<script>
 						function updateDate() {
