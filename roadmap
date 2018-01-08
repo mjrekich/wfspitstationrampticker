@@ -1,4 +1,17 @@
 *Header
+	:Make spacing fit percentages
+	-Logo
+		:Increase pixel image
+		:Easily replaceable for new logo
+	-Admin
+		:Background color
+		:Username and Password is hidden
+		:Artsy Upgrade
+	:Time and date auto stretch
+	-Add flight
+		:Framework for XML
+		:Pop up form
+		:
 
 *Ticker
 
