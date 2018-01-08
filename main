@@ -49,14 +49,18 @@
 				</div>
 				
 				<div class="adminform" id="adminform">
-
-					<span onclick="document.getElementById('adminform').style.display='none'" class="close" title="Close Modal">&times;</span>
-						
+      
+                    			<div class="close" style="height:14px;width:14px;">
+                      
+					    <span onclick="document.getElementById('adminform').style.display='none'" class="close" title="Close Modal" style="position:relative;left:2px;bottom:2px;">&times;</span>
+					
+                    			</div>  
+                      	
 					<form name="login">
 						<label>Username</label>
-						<input type="text" name="userid" size="10"><br/>
+						<input id="userid" type="text" name="userid" size="10"><br/>
 						<label>Password</label>
-						<input type="password" name="pswrd" size="10"><br/>
+						<input id="password" type="password" name="pswrd" size="10"><br/>
 						<input type="button" onclick="check(this.form)" value="Login"/>
 					</form>
 						
