@@ -42,16 +42,16 @@
 
 				<div class="adminbutton">	<!-- Change this to have the button as an id and have everything change by "font-size: vw(width) vh(height)". Make sure that it works for resizable resolutions. -->
 					
-					<button onclick="document.getElementById('adminform').style.display='block'">Admin<br/>Login</button>
+					<button id="adminbutton" onclick="document.getElementById('adminform').style.display='block'">Admin<br/>Login</button>
 
 				</div>	
 					
 				<div class="adminform" id="adminform">
 					
 					<form name="login">
-						<label>Username</label>
+						<label id="labelusername">Username</label>
 						<input id="loginuserid" type="text" name="userid" size="10"><br/>
-						<label>Password</label>
+						<label id="loginpassword">Password</label>
 						<input id="loginpassword" type="password" name="pswrd" size="10"><br/>
 						<input type="button" onclick="check(this.form)" value="Login"/>
 					</form>
