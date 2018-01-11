@@ -5,25 +5,8 @@
 	
 		<meta charset="utf-8"/>						
 		<meta name="description" content="Enter Description Here"/>
-		
-			<script>
-				function refreshAt(hours, minutes, seconds) {
-	    				var now = new Date();
-	    				var then = new Date();
-				if(now.getHours() > hours ||
-	      				(now.getHours() == hours && now.getMinutes() > minutes) ||
-	        			now.getHours() == hours && now.getMinutes() == minutes && now.getSeconds() >= seconds) {
-	        			then.setDate(now.getDate() + 1);
-	    			}
-	    			then.setHours(hours);
-	    			then.setMinutes(minutes);
-	    			then.setSeconds(seconds);
-	    			var timeout = (then.getTime() - now.getTime());
-	    			setTimeout(function() { window.location.reload(true); }, timeout);
-				}
-				refreshAt(03,30,0);
-			</script>			
-				
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+		<script src="js/refresh.js"></script>			
 		<base href=""/>								<!-- Referencing the base URL -->
 		<link rel="stylesheet" href="style.css"/>					<!-- Stylesheet -->
 		<link rel="icon" href=""/>						<!-- Icon, change to .ico -->
@@ -40,181 +23,253 @@
 					
 			<div class="admin">
 
-				<div class="adminbutton">	<!-- Change this to have the button as an id and have everything change by "font-size: vw(width) vh(height)". Make sure that it works for resizable resolutions. -->
+				<div class="admintopbar">
+				
+					<div class="adminbutton">
+						
+						<button id="adminbutton" onclick="document.getElementById('adminform').style.display='block'">Admin<br/>Login</button>
+						
+					</div>	
 					
-					<button id="adminbutton" onclick="document.getElementById('adminform').style.display='block'">Admin<br/>Login</button>
-
-				</div>	
+					<div class="adminbuttoncancel">
+					
+						<button id="adminbuttoncancel" onclick="document.getElementById('header').style.backgroundColor='#000080';document.getElementById('adminbuttoncancel').style.display='none';document.getElementById('adminbutton').style.display='block'";>Cancel</button>
+						
+					</div>
+					
+				</div>
 					
 				<div class="adminform" id="adminform">
 					
-					<form name="login">
-						<label id="labelusername">Username</label>
-						<input id="loginuserid" type="text" name="userid" size="10"><br/>
-						<label id="loginpassword">Password</label>
-						<input id="loginpassword" type="password" name="pswrd" size="10"><br/>
-						<input type="button" onclick="check(this.form)" value="Login"/>
+					<form id="form" name="login">
+						<div class="username">
+							<label id="labelusername">Username</label>
+							<input id="loginuserid" type="text" name="userid" size="10"><br/>
+						</div>
+						
+						<div class="password">
+							<label id="labelpassword">Password</label>
+							<input id="loginpassword" type="password" name="pswrd" size="10"><br/>
+						</div>	
+						
+						<div class="adminbottombar">
+							<input id="loginbutton" type="button" onclick="check(this.form)" value="Login"/>
+							<p id="inc">INCORRECT</p>
+							
+							<div class="close1">
+								<span onclick="document.getElementById('adminform').style.display='none'" id="close" title="Close Modal">&times;</span>
+							</div>
+				
+							<div class="inc">
+								<p id="inc">INCORRECT</p>
+							</div>
+						
+						</div>
+						
 					</form>
 					
-					<script>
-						function check(form) {
-							if(form.userid.value == "wfs" && form.pswrd.value == "wfs") {
-									document.getElementById('header').style.backgroundColor = 'yellow',
-									document.getElementById('header').style.color = 'black'
-							}
-							else {
-									document.getElementById('inc').innerHTML = "Incorrect";
-							}
-						  
-						}
-					</script>
-					
-					<div class="close1">
-					
-						<span onclick="document.getElementById('adminform').style.display='none'" id="close" title="Close Modal">&times;</span>
-					
-					</div>
-					
+					<script src="js/login.js"></script>
+				
 				</div>
-					
-				<span class="inc" id="inc"></span>
-					
+				
+				<script src="js/inc.js"></script>
+				
 			</div>
 				
-				<div class="timeanddate">
+			<div class="timeanddate">
 				
-					<div class="time">
+				<div class="time">
 					
-						<p id="time" class="time"></p>
-						
-						<br/>
+						<p id="time"></p>
                   
-						<script>
-							function updateTime() {
-								var now = new Date(); 
-								h = now.getHours() < 10 		//hours
-								? '0' + now.getHours() 
-								: now.getHours();
-								m = now.getMinutes() < 10 		//minutes
-								? '0' + now.getMinutes() 
-								: now.getMinutes();
-								s = now.getSeconds() < 10 		//seconds
-								? '0' + now.getSeconds() 
-								: now.getSeconds();
-								time = h + ':' + m + ":" + s; 
-								document.getElementById('time').innerHTML = time;
-								setTimeout(updateTime, 1000);
-							}
-							updateTime();
-						</script>
+						<script src="js/time.js"></script>
 						
 					</div>
 					
-					<div class="date">
+				<div class="date">
 					
-						<p id="date" class="date"></p>
+						<p id="date"></p>
 						
-						<script>
-							function updateDate() {
-								var yay = new Date();
-								month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-								d = yay.getDate(); //date
-								m = month[yay.getMonth()]; //month
-								y = yay.getFullYear(); //year
-								date = m + " " + d + ", " + y;
-								document.getElementById('date').innerHTML = date;
-								setTimeout(updateDate, 1000);
-								}
-								updateDate();
-						</script>
+						<script src="js/date.js"></script>
 						
+					</div>
+					
+			</div>
+			
+			<div class="addflight">
+				
+				<div class="addflighttopbar">
+				
+					<div class="addflightbutton">
+					
+						<button onclick="document.getElementById('addflightform').style.display='block'">Add<br/>Flight</button>
+					
 					</div>
 					
 				</div>
 				
-				<div class="addflight">
-				
-					<button onclick="document.getElementById('addflight').style.display='block'">Add<br/>Flight</button>
+				<div id="addflightform" class="addflightform">
 					
-					<div id="addflight" class="addflight">
-					
-						<span onclick="document.getElementById('addflight').style.display='none'" class="close" title="Close Add Flight">&times;</span>
-						
-						<form name="addflight">
+					<form name="addflight">
+						<div class="airlinecode">
 							<label>Airline Code</label>
-							<input type="text" name="airline" maxlength="3" size="1"><br/>
+							<input id="airlinecode" type="text" name="airline" maxlength="3" size="1"><br/>
+						</div>	
+						
+						<div class="flightnumber">
 							<label>Flight #</label>
 							<input type="text" name="flightnumber" maxlength="4" size="3"><br/>
+						</div>	
+						
+						<div class="route">
 							<label>Route</label>
 							<input type="text" name="origin" maxlength="4" size="1">
 							<input type="text" name="destination" maxlength="4" size="1"><br/>
+						</div>
+						
+						<div class="reoccuring">
 							<label>Reoccurring?</label>
-							<input type="radio" name="reoccurring">
-						</form>
+							<input id="reoccuring" type="checkbox" name="reoccurring">
+						</div>
 						
-					</div>
-					
+						<div class="addflightbottombar">
+							<input id="checkflight" type="button" name="checkflight" onclick="saveAirline()">
+							<span onclick="document.getElementById('addflightform').style.display='none'" class="close2" title="Close Add Flight">&times;</span>
+							<p class="savedal" id="savedal"></p>
+						</div>
+						
+						<script src="js/addflight.js"></script>
+						
+					</form>
+										
 				</div>
+					
+			</div>
 				
+		</div>
+			
+		<div class="deparrheader">
+		
+			<div class="depheader">
+
+				<h3 class="depheaderh" id="depheaderh">Departures</h3>
+			
 			</div>
 			
-			<div class="tickerheader">
+			<div class="headerdivider">
 			
-				<h1>Departures</h1>
-				<h1>Arrivals</h1>
-				
 			</div>
 			
-			<div class="departures">
-			
-				<div id="d1">
+			<div class="arrheader">
 				
-					<div id="d1allogo">
-					
-						<a href=""> <!-- Airline Logos -->
-						
-					</div>
-					
-					<div id="d1alname">
-					
-						<p></p>
-						
-					</div>
-					
-					<div id="d1fltnum">
-					
-						<p></p>
-						
-					</div>
-					
-					<div id="d1route">
-					
-						<p></p>
-						<a href=""> <!-- Arrow Picture for Route -->
-						<p></p>
-						
-					</div>
-					
-					<div id="d1status">
-					
-						<p></p>
-						
-					</div>
-					
-				</div>
-				
-				<div class="arrivals">
-				
-				</div>
+				<h3 class="arrheaderh">Arrivals</h3>
 				
 			</div>
 			
 		</div>
 		
-		<div class="footer">
+		<div class="deparr">
 		
-			<p>Copyright Matthew Rekich 2018</p>
+			<script src="js/updateFlights.js"></script>
+		
+			<div class="departures">
 			
+				<div class="dep0">
+				
+					<div class="dep0allogo" id="dep0allogo">
+					
+					</div>
+					
+					<div class="dep0alname">
+					
+						<button type="button" id="testbutton">test</button>
+						
+					</div>
+					
+					<div class="dep0fltnum">
+					
+						<p id="dep0fltnum"></p>
+						
+					</div>
+					
+					<div class="dep0route">
+					
+						<p id="dep0org"></p>
+						<a href=""></a> <!-- Arrow Picture for Route -->
+						<p id="dep0des"></p>
+						
+					</div>
+					
+					<div class="dep0eta">
+					
+						<p id=dep0eta></p>
+					
+					</div>
+					
+					<div class="dep0plane">
+					
+					</div>
+					
+					<div class="dep0status">
+					
+						<p id="dep0status"></p>
+						
+					</div>
+					
+				</div>
+				
+				<div class="dep1">
+				
+				</div>
+				
+				<div class="dep2">
+				
+				</div>
+				
+				<div class="dep3">
+				
+				</div>
+				
+				<div class="dep4">
+				
+				</div>
+				
+				<div class="dep5">
+				
+				</div>
+				
+				<div class="dep6">
+				
+				</div>
+				
+				<div class="dep7">
+				
+				</div>
+				
+				<div class="dep8">
+				
+				</div>
+				
+				<div class="dep9">
+				
+				</div>
+				
+			</div>
+			
+			<div class="divider">
+			
+			</div>
+			
+			<div class="arrivals">
+				
+			</div>
+			
+		</div>
+		
+		<div class="footer">		
+	
+			<p>Copyright Matthew Rekich 2018</p>
+		
 		</div>
 		
 	</body>
