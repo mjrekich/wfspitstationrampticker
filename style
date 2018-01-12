@@ -303,10 +303,10 @@ body {
 				
 				.dep0allogo {
 					position: relative;
-					height: 50%;
+					height: 4%;
 					width: 7%;
-					margin-left: 5.5%;
-					margin-top: 1.4%;
+					margin-top: 2%;
+					margin-bottom: 2%;
 					float: left;
 					background-color: yellow;
 				}
@@ -390,6 +390,82 @@ body {
 				margin-left: 3%;
 				margin-right: 3%;
 			}
+			
+				.dep1allogo {
+					position: relative;
+					height: 50%;
+					width: 7%;
+					margin-left: 5.5%;
+					margin-top: 1.4%;
+					float: left;
+					background-color: yellow;
+				}
+				
+					#dep1allogo {
+						background-image: url();
+						background-repeat: no-repeat;
+						background-size: 100% 100%;
+					}
+					
+				.dep1alname {
+					position: relative;
+					height: 50%;
+					width: 12%;
+					margin-left: 2%;
+					margin-top: 1.4%;
+					float: left;
+					background-color: green;
+				}
+				
+				.dep1fltnum {
+					position: relative;
+					height: 50%;
+					width: 11%;
+					margin-left: 2%;
+					margin-top: 1.4%;
+					float: left;
+					background-color: orange;
+				}
+				
+				.dep1route {
+					position: relative;
+					height: 50%;
+					width: 16%;
+					margin-left: 2%;
+					margin-top: 1.4%;
+					float: left;
+					background-color: purple;
+				}
+				
+				.dep1eta {
+					position: relative;
+					height: 50%;
+					width: 9%;
+					margin-left: 2%;
+					margin-top: 1.4%;
+					float: left;
+					background-color: black;
+				}
+				
+				.dep1plane {
+					position: relative;
+					height: 50%;
+					width: 4%;
+					margin-left: 2%;
+					margin-top: 1.4%;
+					float: left;
+					background-color: cyan;
+				}
+				
+				.dep1status {
+					position: relative;
+					height: 50%;
+					width: 18%;
+					margin-left: 2%;
+					margin-top: 1.4%;
+					float: left;
+					background-color: pink;
+				}
 			
 			.dep2 {
 				position: relative;
