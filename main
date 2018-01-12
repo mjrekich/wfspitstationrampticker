@@ -5,7 +5,7 @@
 	
 		<meta charset="utf-8"/>						
 		<meta name="description" content="Enter Description Here"/>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="js/refresh.js"></script>			
 		<base href=""/>								<!-- Referencing the base URL -->
 		<link rel="stylesheet" href="style.css"/>					<!-- Stylesheet -->
@@ -18,7 +18,7 @@
 		<div class="header" id="header">
 		
 			<div class="headerlogo">
-			
+				<button type="button" id="testbutton">test</button><!-- ------------------------------------------------------------------------------------TEST BUTTON------------------------------------------------------------------------------- -->
 			</div>	
 					
 			<div class="admin">
@@ -174,85 +174,509 @@
 		
 			<div class="departures">
 			
-				<div class="dep0">
-				
-					<div class="dep0allogo" id="dep0allogo">
+				<table class="departuretable" id="departuretable">
+			
+					<div class="dep0"> <!-- -------------------------------------------------------------------------------------- DEP 0 -------------------------------------------------------------------------------- -->
 					
-					</div>
+						<tr>
 					
-					<div class="dep0alname">
-					
-						<button type="button" id="testbutton">test</button>
+							<div class="dep0allogo">
+							
+								<td id="dep0allogo">a</td>
+							
+							</div>
+							
+							<div class="dep0alname">
+							
+								<td id="dep0alname">b</td>
+								
+							</div>
+							
+							<div class="dep0fltnum">
+							
+								<td id="dep0fltnum">c</td>
+								
+							</div>
+							
+							<div class="dep0route">
+							
+								<td id="dep0route">d</td>
+								
+							</div>
+							
+							<div class="dep0eta">
+							
+								<td id="dep0eta">e</td>
+							
+							</div>
+							
+							<div class="dep0plane">
+							
+								<td id="dep0plane">f</td>
+							
+							</div>
+							
+							<div class="dep0status">
 						
-					</div>
-					
-					<div class="dep0fltnum">
-					
-						<p id="dep0fltnum"></p>
+								<td id="dep0status">g</td>
 						
-					</div>
-					
-					<div class="dep0route">
-					
-						<p id="dep0org"></p>
-						<a href=""></a> <!-- Arrow Picture for Route -->
-						<p id="dep0des"></p>
+							</div>
+							
+						</tr>
 						
-					</div>
+					</div>  <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 					
-					<div class="dep0eta">
+					<div class="dep1">
 					
-						<p id=dep0eta></p>
+						<tr>
 					
-					</div>
-					
-					<div class="dep0plane">
-					
-					</div>
-					
-					<div class="dep0status">
-					
-						<p id="dep0status"></p>
+							<div class="dep1allogo">
+							
+								<td id="dep1allogo"></td>
+							
+							</div>
+							
+							<div class="dep1alname">
+							
+								<td id="dep1alname"></td>
+								
+							</div>
+							
+							<div class="dep1fltnum">
+							
+								<td id="dep1fltnum"></td>
+								
+							</div>
+							
+							<div class="dep1route">
+							
+								<td id="dep1route"></td>
+								
+							</div>
+							
+							<div class="dep1eta">
+							
+								<td id="dep1eta"></td>
+							
+							</div>
+							
+							<div class="dep1plane">
+							
+								<td id="dep1plane"></td>
+							
+							</div>
+							
+							<div class="dep1status">
 						
+								<td id="dep1status"></td>
+						
+							</div>
+							
+						</tr>
+					
 					</div>
 					
-				</div>
-				
-				<div class="dep1">
-				
-				</div>
-				
-				<div class="dep2">
-				
-				</div>
-				
-				<div class="dep3">
-				
-				</div>
-				
-				<div class="dep4">
-				
-				</div>
-				
-				<div class="dep5">
-				
-				</div>
-				
-				<div class="dep6">
-				
-				</div>
-				
-				<div class="dep7">
-				
-				</div>
-				
-				<div class="dep8">
-				
-				</div>
-				
-				<div class="dep9">
-				
-				</div>
+					<div class="dep2">
+					
+						<tr>
+					
+							<div class="dep2allogo">
+							
+								<td id="dep2allogo"></td>
+							
+							</div>
+							
+							<div class="dep2alname">
+							
+								<td id="dep2alname"></td>
+								
+							</div>
+							
+							<div class="dep2fltnum">
+							
+								<td id="dep2fltnum"></td>
+								
+							</div>
+							
+							<div class="dep2route">
+							
+								<td id="dep2route"></td>
+								
+							</div>
+							
+							<div class="dep2eta">
+							
+								<td id="dep2eta"></td>
+							
+							</div>
+							
+							<div class="dep2plane">
+							
+								<td id="dep2plane"></td>
+							
+							</div>
+							
+							<div class="dep2status">
+						
+								<td id="dep2status"></td>
+						
+							</div>
+							
+						</tr>
+					
+					</div>
+					
+					<div class="dep3">
+					
+						<tr>
+					
+							<div class="dep3allogo">
+							
+								<td id="dep3allogo"></td>
+							
+							</div>
+							
+							<div class="dep3alname">
+							
+								<td id="dep3alname"></td>
+								
+							</div>
+							
+							<div class="dep3fltnum">
+							
+								<td id="dep3fltnum"></td>
+								
+							</div>
+							
+							<div class="dep3route">
+							
+								<td id="dep3route"></td>
+								
+							</div>
+							
+							<div class="dep3eta">
+							
+								<td id="dep3eta"></td>
+							
+							</div>
+							
+							<div class="dep3plane">
+							
+								<td id="dep3plane"></td>
+							
+							</div>
+							
+							<div class="dep3status">
+						
+								<td id="dep3status"></td>
+						
+							</div>
+							
+						</tr>
+					
+					</div>
+					
+					<div class="dep4">
+					
+						<tr>
+					
+							<div class="dep4allogo">
+							
+								<td id="dep4allogo"></td>
+							
+							</div>
+							
+							<div class="dep4alname">
+							
+								<td id="dep4alname"></td>
+								
+							</div>
+							
+							<div class="dep4fltnum">
+							
+								<td id="dep4fltnum"></td>
+								
+							</div>
+							
+							<div class="dep4route">
+							
+								<td id="dep4route"></td>
+								
+							</div>
+							
+							<div class="dep4eta">
+							
+								<td id="dep4eta"></td>
+							
+							</div>
+							
+							<div class="dep4plane">
+							
+								<td id="dep4plane"></td>
+							
+							</div>
+							
+							<div class="dep4status">
+						
+								<td id="dep4status"></td>
+						
+							</div>
+							
+						</tr>
+					
+					</div>
+					
+					<div class="dep5">
+					
+						<tr>
+					
+							<div class="dep5allogo">
+							
+								<td id="dep5allogo"></td>
+							
+							</div>
+							
+							<div class="dep5alname">
+							
+								<td id="dep5alname"></td>
+								
+							</div>
+							
+							<div class="dep5fltnum">
+							
+								<td id="dep5fltnum"></td>
+								
+							</div>
+							
+							<div class="dep5route">
+							
+								<td id="dep5route"></td>
+								
+							</div>
+							
+							<div class="dep5eta">
+							
+								<td id="dep5eta"></td>
+							
+							</div>
+							
+							<div class="dep5plane">
+							
+								<td id="dep5plane"></td>
+							
+							</div>
+							
+							<div class="dep5status">
+						
+								<td id="dep5status"></td>
+						
+							</div>
+							
+						</tr>
+					
+					</div>
+					
+					<div class="dep6">
+					
+						<tr>
+					
+							<div class="dep6allogo">
+							
+								<td id="dep6allogo"></td>
+							
+							</div>
+							
+							<div class="dep6alname">
+							
+								<td id="dep6alname"></td>
+								
+							</div>
+							
+							<div class="dep6fltnum">
+							
+								<td id="dep6fltnum"></td>
+								
+							</div>
+							
+							<div class="dep6route">
+							
+								<td id="dep6route"></td>
+								
+							</div>
+							
+							<div class="dep6eta">
+							
+								<td id="dep6eta"></td>
+							
+							</div>
+							
+							<div class="dep6plane">
+							
+								<td id="dep6plane"></td>
+							
+							</div>
+							
+							<div class="dep6status">
+						
+								<td id="dep6status"></td>
+						
+							</div>
+							
+						</tr>
+					
+					</div>
+					
+					<div class="dep7">
+					
+						<tr>
+					
+							<div class="dep7allogo">
+							
+								<td id="dep7allogo"></td>
+							
+							</div>
+							
+							<div class="dep7alname">
+							
+								<td id="dep7alname"></td>
+								
+							</div>
+							
+							<div class="dep7fltnum">
+							
+								<td id="dep7fltnum"></td>
+								
+							</div>
+							
+							<div class="dep7route">
+							
+								<td id="dep7route"></td>
+								
+							</div>
+							
+							<div class="dep7eta">
+							
+								<td id="dep7eta"></td>
+							
+							</div>
+							
+							<div class="dep7plane">
+							
+								<td id="dep7plane"></td>
+							
+							</div>
+							
+							<div class="dep7status">
+						
+								<td id="dep7status"></td>
+						
+							</div>
+							
+						</tr>
+					
+					</div>
+					
+					<div class="dep8">
+					
+						<tr>
+					
+							<div class="dep8allogo">
+							
+								<td id="dep8allogo"></td>
+							
+							</div>
+							
+							<div class="dep8alname">
+							
+								<td id="dep8alname"></td>
+								
+							</div>
+							
+							<div class="dep8fltnum">
+							
+								<td id="dep8fltnum"></td>
+								
+							</div>
+							
+							<div class="dep8route">
+							
+								<td id="dep8route"></td>
+								
+							</div>
+							
+							<div class="dep8eta">
+							
+								<td id="dep8eta"></td>
+							
+							</div>
+							
+							<div class="dep8plane">
+							
+								<td id="dep8plane"></td>
+							
+							</div>
+							
+							<div class="dep8status">
+						
+								<td id="dep8status"></td>
+						
+							</div>
+							
+						</tr>
+					
+					</div>
+					
+					<div class="dep9">
+					
+						<tr>
+					
+							<div class="dep9allogo">
+							
+								<td id="dep9allogo"></td>
+							
+							</div>
+							
+							<div class="dep9alname">
+							
+								<td id="dep9alname"></td>
+								
+							</div>
+							
+							<div class="dep9fltnum">
+							
+								<td id="dep9fltnum"></td>
+								
+							</div>
+							
+							<div class="dep9route">
+							
+								<td id="dep9route"></td>
+								
+							</div>
+							
+							<div class="dep9eta">
+							
+								<td id="dep9eta"></td>
+							
+							</div>
+							
+							<div class="dep9plane">
+							
+								<td id="dep9plane"></td>
+							
+							</div>
+							
+							<div class="dep9status">
+						
+								<td id="dep9status"></td>
+						
+							</div>
+							
+						</tr>
+					
+					</div>
+					
+				</table>
 				
 			</div>
 			
